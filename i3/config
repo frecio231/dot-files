@@ -183,7 +183,7 @@ exec steam
 exec redshift -c ~/.config/redshift.conf &
 exec_always --no-startup-id nitrogen --restore
 
-exec ~/.screenlayout/script.sh
+exec ~/.screenlayout/screen.sh
 
 #Limit apps per workspace
 assign[class="XTerm"] $workspace1
@@ -194,6 +194,7 @@ assign[class="Thunar"] $workspace2
 assign[class="Blender"] $workspace3
 assign[class="Steam"] $workspace4
 assign[class="gwenview"] $workspace5
+assign[class="okular"] $workspace5
 assign[class="JDownloader"] $workspace6
 assign[class="vlc"] $workspace8
 assign[class="Amarok"] $workspace10
