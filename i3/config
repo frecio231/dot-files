@@ -170,9 +170,12 @@ bar {
 bindsym $mod+Shift+x exec /home/fernando/bin/.lock_screen.sh
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+
+#Mail
+bindsym XF86Mail exec --no-startup-id thunderbird
 
 #Set my wacom to DVI-0 on restart
 exec_always xsetwacom set "Wacom Bamboo 16FG 4x5 Pen stylus" MapToOutput DVI-0
@@ -180,6 +183,7 @@ exec_always xsetwacom set "Wacom Bamboo 16FG 4x5 Pen stylus" MapToOutput DVI-0
 #start mega, redshift, restart nitrogen & steam on startup
 exec megasync
 exec steam
+exec jdownloader
 exec redshift -c ~/.config/redshift.conf &
 exec_always --no-startup-id nitrogen --restore
 
@@ -196,6 +200,7 @@ assign[class="Steam"] $workspace4
 assign[class="gwenview"] $workspace5
 assign[class="okular"] $workspace5
 assign[class="JDownloader"] $workspace6
+assign[class="Thunderbird"] $workspace6
 assign[class="vlc"] $workspace8
 assign[class="Amarok"] $workspace10
 
@@ -214,4 +219,5 @@ workspace $workspace2 output $RightS
 workspace $workspace3 output $RightS
 workspace $workspace4 output $RightS
 workspace $workspace5 output $RightS
+workspace $workspace6 output $RightS
 workspace $workspace8 output $RightS
